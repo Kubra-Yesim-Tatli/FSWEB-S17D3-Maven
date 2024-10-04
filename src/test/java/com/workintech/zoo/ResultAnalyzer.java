@@ -1,4 +1,4 @@
-package com.workintech.s17d2;
+package com.workintech.zoo;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -54,8 +54,8 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback{
         long success = summary.get(TestResultStatus.SUCCESSFUL) != null ? summary.get(TestResultStatus.SUCCESSFUL) : 0;
         long failure = summary.get(TestResultStatus.FAILED) != null ? summary.get(TestResultStatus.FAILED) : 0;
 
-        long score = success / (success + failure);
-        String userId = "999999";
+        double score = (double) success / (success + failure);
+        String userId = "216411";
 
         JSONObject json = new JSONObject();
         json.put("score", score);
